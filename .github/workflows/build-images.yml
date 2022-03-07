@@ -67,7 +67,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: workspace-base-image
-          platforms: linux/amd64,linux/arm/v7
+          platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta_workspace.outputs.tags }}
           labels: ${{ steps.meta_workspace.outputs.labels }}

@@ -1,4 +1,4 @@
-FROM --platform=${BUILDPLATFORM} ubuntu:20.04
+FROM ubuntu:20.04
 
 ARG TARGETPLATFORM
 
@@ -23,8 +23,8 @@ ENV FIXUID_VERSION=0.4.1
 
 RUN \
   case ${TARGETPLATFORM} in \
-    "linux/amd64")  DOWNLOAD_ARCH="amd64" ;; \
-    "linux/arm/v7") DOWNLOAD_ARCH="arm64" ;; \
+    "linux/amd64") DOWNLOAD_ARCH="amd64" ;; \
+    "linux/arm64") DOWNLOAD_ARCH="arm64" ;; \
   esac \
   && curl -fsSL https://github.com/coder/code-server/releases/download/v${CODE_SERVER_VERSION}/code-server_${CODE_SERVER_VERSION}_${DOWNLOAD_ARCH}.deb \
      -o code-server_${CODE_SERVER_VERSION}_${DOWNLOAD_ARCH}.deb \
