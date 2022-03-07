@@ -25,7 +25,8 @@ RUN \
   case ${TARGETPLATFORM} in \
     "linux/amd64")  DOWNLOAD_ARCH="amd64" ;; \
     "linux/arm/v7") DOWNLOAD_ARCH="arm64" ;; \
-  curl -fsSL https://github.com/coder/code-server/releases/download/v${CODE_SERVER_VERSION}/code-server_${CODE_SERVER_VERSION}_${DOWNLOAD_ARCH}.deb \
+  esac \
+  && curl -fsSL https://github.com/coder/code-server/releases/download/v${CODE_SERVER_VERSION}/code-server_${CODE_SERVER_VERSION}_${DOWNLOAD_ARCH}.deb \
      -o code-server_${CODE_SERVER_VERSION}_${DOWNLOAD_ARCH}.deb \
   && dpkg -i code-server_${CODE_SERVER_VERSION}_${DOWNLOAD_ARCH}.deb \
   && rm code-server_${CODE_SERVER_VERSION}_${DOWNLOAD_ARCH}.deb \ 
