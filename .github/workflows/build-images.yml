@@ -32,6 +32,10 @@ jobs:
           - dockerfile: base-image/Dockerfile
             image: ghcr.io/shadowkrusha/base-workspace
     steps:
+      # Get the repositery's code
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - uses: ./.github/actions/build-image
         with:
           dockerfile: ${{ matrix.dockefile }}
