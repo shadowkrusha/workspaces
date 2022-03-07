@@ -1,4 +1,6 @@
-FROM ubuntu:20.04
+FROM --platform=${BUILDPLATFORM} ubuntu:20.04
+
+ARG TARGETPLATFORM
 
 RUN apt-get update && apt-get install -y \
     openssl \
@@ -13,18 +15,25 @@ RUN apt-get update && apt-get install -y \
     bash-completion
 
 
+# renovate: datasource=github-releases depName=coder/code-server versioning=loose
 ENV CODE_SERVER_VERSION=4.1.0
-RUN curl -fsSL https://github.com/coder/code-server/releases/download/v${CODE_SERVER_VERSION}/code-server_${CODE_SERVER_VERSION}_arm64.deb \
-     -o code-server_${CODE_SERVER_VERSION}_arm64.deb \
-  && dpkg -i code-server_${CODE_SERVER_VERSION}_arm64.deb \
-  && rm code-server_${CODE_SERVER_VERSION}_arm64.deb
 
-RUN ARCH=arm64 && \
-    curl -sSL "https://github.com/boxboat/fixuid/releases/download/v0.4.1/fixuid-0.4.1-linux-$ARCH.tar.gz" | tar -C /usr/local/bin -xzf - && \
-    chown root:root /usr/local/bin/fixuid && \
-    chmod 4755 /usr/local/bin/fixuid && \
-    mkdir -p /etc/fixuid && \
-    printf "user: coder\ngroup: coder\n" > /etc/fixuid/config.yml
+# renovate: datasource=github-releases depName=boxboat/fixuid versioning=loose
+ENV FIXUID_VERSION=0.4.1
+
+RUN \
+  case ${TARGETPLATFORM} in \
+    "linux/amd64")  DOWNLOAD_ARCH="amd64" ;; \
+    "linux/arm/v7") DOWNLOAD_ARCH="arm64" ;; \
+  curl -fsSL https://github.com/coder/code-server/releases/download/v${CODE_SERVER_VERSION}/code-server_${CODE_SERVER_VERSION}_${DOWNLOAD_ARCH}.deb \
+     -o code-server_${CODE_SERVER_VERSION}_${DOWNLOAD_ARCH}.deb \
+  && dpkg -i code-server_${CODE_SERVER_VERSION}_${DOWNLOAD_ARCH}.deb \
+  && rm code-server_${CODE_SERVER_VERSION}_${DOWNLOAD_ARCH}.deb \ 
+  && curl -sSL "https://github.com/boxboat/fixuid/releases/download/v0.4.1/fixuid-${FIXUID_VERSION}-linux-${DOWNLOAD_ARCH}.tar.gz" | tar -C /usr/local/bin -xzf - \
+  && chown root:root /usr/local/bin/fixuid \
+  && chmod 4755 /usr/local/bin/fixuid \
+  && mkdir -p /etc/fixuid \
+  && printf "user: coder\ngroup: coder\n" > /etc/fixuid/config.yml
 
 ## User account
 RUN adduser --disabled-password --gecos '' coder && \
