@@ -15,10 +15,10 @@ RUN apt-get update && apt-get install -y \
     bash-completion
 
 
-# renovate: datasource=github-releases depName=coder/code-server versioning=loose
+# renovate: datasource=github-releases depName=coder/code-server extractVersion=^v(?<version>.*)$
 ENV CODE_SERVER_VERSION=4.1.0
 
-# renovate: datasource=github-releases depName=boxboat/fixuid versioning=loose
+# renovate: datasource=github-releases depName=boxboat/fixuid extractVersion=^v(?<version>.*)$
 ENV FIXUID_VERSION=0.4.1
 
 RUN \
@@ -30,7 +30,7 @@ RUN \
      -o code-server_${CODE_SERVER_VERSION}_${DOWNLOAD_ARCH}.deb \
   && dpkg -i code-server_${CODE_SERVER_VERSION}_${DOWNLOAD_ARCH}.deb \
   && rm code-server_${CODE_SERVER_VERSION}_${DOWNLOAD_ARCH}.deb \ 
-  && curl -sSL "https://github.com/boxboat/fixuid/releases/download/v0.4.1/fixuid-${FIXUID_VERSION}-linux-${DOWNLOAD_ARCH}.tar.gz" | tar -C /usr/local/bin -xzf - \
+  && curl -sSL "https://github.com/boxboat/fixuid/releases/download/v${FIXUID_VERSION}/fixuid-${FIXUID_VERSION}-linux-${DOWNLOAD_ARCH}.tar.gz" | tar -C /usr/local/bin -xzf - \
   && chown root:root /usr/local/bin/fixuid \
   && chmod 4755 /usr/local/bin/fixuid \
   && mkdir -p /etc/fixuid \
