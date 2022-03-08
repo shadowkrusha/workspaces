@@ -30,7 +30,7 @@ jobs:
       matrix:
         include:
           - dockerfile: Dockerfile
-            context: base-workspace
+            context: base-image
             image: ghcr.io/shadowkrusha/base-workspace
     steps:
       # Get the repositery's code
