@@ -87,7 +87,7 @@ pytz-deprecation-shim==0.1.0.post0
 PyYAML==6.0
 pyzmq==22.3.0
 requests==2.27.1
-ruamel.yaml==0.17.17
+ruamel.yaml==0.17.21
 ruamel.yaml.clib==0.2.6
 scipy==1.8.0
 SecretStorage==3.3.1
