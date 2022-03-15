@@ -37,6 +37,9 @@ jobs:
           - dockerfile: Dockerfile
             context: python-image
             image: ghcr.io/shadowkrusha/python-workspace
+          - dockerfile: Dockerfile
+            context: java-image
+            image: ghcr.io/shadowkrusha/java-workspace
     steps:
       # Get the repositery's code
       - name: Checkout
