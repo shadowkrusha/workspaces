@@ -2,7 +2,7 @@ agate==1.6.3
 altair==4.2.0
 argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
-asn1crypto==1.5.0
+asn1crypto==1.5.1
 asttokens==2.0.5
 attrs==21.4.0
 Babel==2.9.1
