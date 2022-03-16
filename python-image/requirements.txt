@@ -43,7 +43,7 @@ jsonschema==3.2.0
 jupyter-client==7.1.2
 jupyter-core==4.9.2
 jupyterlab-pygments==0.1.2
-jupyterlab-widgets==1.0.2
+jupyterlab-widgets==1.1.0
 keyring==23.5.0
 leather==0.3.4
 Logbook==1.5.3
