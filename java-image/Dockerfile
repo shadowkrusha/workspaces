@@ -6,12 +6,19 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Australia/Perth
 
 RUN apt-get update && apt-get install -y \
-    openjdk-17-jdk-headless \
-    maven
+    openjdk-17-jdk-headless
+
+ENV MAVEN_VERSION=3.8.5
+RUN mkdir -p /usr/local/maven \
+  && cd /usr/local/maven \
+  && curl -fsSL https://dlcdn.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
+       -o /tmp/apache-maven.tar.gz \
+  && tar zxvf /tmp/apache-maven.tar.gz --strip-components=1 \
+  && rm /tmp/apache-maven.tar.gz
 
 USER coder
 
-ENV PATH=${PATH}:/home/coder/.local/bin
+ENV PATH=${PATH}:/usr/local/maven/bin:/home/coder/.local/bin
 
 RUN  code-server \
  --install-extension vscjava.vscode-java-pack \
