@@ -1,4 +1,4 @@
-FROM ghcr.io/shadowkrusha/base-workspace:1.0.3
+FROM ghcr.io/shadowkrusha/base-workspace:1.0.4
 
 USER root
 
