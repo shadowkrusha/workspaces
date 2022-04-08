@@ -8,7 +8,7 @@ attrs==21.4.0
 Babel==2.9.1
 backcall==0.2.0
 backports.zoneinfo==0.2.1
-bleach==4.1.0
+bleach==5.0.0
 certifi==2021.10.8
 cffi==1.15.0
 charset-normalizer==2.0.12
@@ -24,7 +24,7 @@ defusedxml==0.7.1
 entrypoints==0.4
 executing==0.8.3
 future==0.18.2
-great-expectations==0.14.13
+great-expectations==0.15.0
 greenlet==1.1.2
 hologram==0.0.14
 idna==3.3
@@ -42,7 +42,7 @@ jsonpointer==2.2
 jsonschema==4.4.0
 jupyter-client==7.2.2
 jupyter-core==4.9.2
-jupyterlab-pygments==0.1.2
+jupyterlab-pygments==0.2.0
 jupyterlab-widgets==1.1.0
 keyring==23.5.0
 leather==0.3.4
