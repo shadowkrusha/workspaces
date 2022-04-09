@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:default"],
+  "extends": ["config:base"],
   "branchConcurrentLimit": 20,
   "packageRules": [
     {
