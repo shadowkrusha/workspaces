@@ -15,10 +15,10 @@ RUN apt-get update && apt-get install -y \
     bash-completion
 
 
-# renovate: datasource=github-releases lookupName=coder/code-server
+# renovate: datasource=github-releases depName=coder/code-server
 ENV CODE_SERVER_VERSION=4.1.0
 
-# renovate: datasource=github-releases lookupName=boxboat/fixuid
+# renovate: datasource=github-releases depName=boxboat/fixuid
 ENV FIXUID_VERSION=0.4.1
 
 RUN \
