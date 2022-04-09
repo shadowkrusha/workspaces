@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
 ENV CODE_SERVER_VERSION=4.2.0
 
 # renovate: datasource=github-releases depName=boxboat/fixuid
-ENV FIXUID_VERSION=0.4.1
+ENV FIXUID_VERSION=0.5.1
 
 RUN \
   case ${TARGETPLATFORM} in \
