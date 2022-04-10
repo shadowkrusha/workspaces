@@ -20,14 +20,11 @@ COPY requirements.txt /tmp
 
 RUN pip3 install -r /tmp/requirements.txt
 
-# sqlalchemy snowflake-sqlalchemy great_expectations 
-# dbt-core dbt-snowflake 
-
 ENV SNOWSQL_VERSION=1.2.21
 
 RUN \
   case ${TARGETPLATFORM} in \
-    "linux/arm64") curl -fsSL https://sfc-repo.snowflakecomputing.com/snowsql/bootstrap/1.2/linux_x86_64/snowsql-${SNOWSQL_VERSION}-linux_x86_64.bash \
+    "linux/amd64") curl -fsSL https://sfc-repo.snowflakecomputing.com/snowsql/bootstrap/1.2/linux_x86_64/snowsql-${SNOWSQL_VERSION}-linux_x86_64.bash \
         -o /tmp/snowsql.bash; \
         SNOWSQL_DEST=${HOME}/bin SNOWSQL_LOGIN_SHELL=${HOME}/.bashrc bash /tmp/snowsql.bash ;; \
   esac
