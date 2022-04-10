@@ -1,5 +1,7 @@
 FROM ghcr.io/shadowkrusha/base-workspace:1.0.5
 
+ARG TARGETPLATFORM
+
 USER root
 
 RUN apt-get update && apt-get install -y \
