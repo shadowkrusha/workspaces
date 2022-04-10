@@ -31,7 +31,7 @@
       "labels": ["renovate/image", "dep/digest"]
     },
     {
-      "matchUpdateTypes": ["patch", "digest"],
+      "matchUpdateTypes": ["digest"],
       "automerge": true
     },
     {
