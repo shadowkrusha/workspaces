@@ -10,7 +10,7 @@ great-expectations==0.15.1
 cffi==1.15.0
 cryptography~=3.4
 
-dbt-core==1.0.4
+dbt-core==1.0.5
 dbt-snowflake==1.0.1
 
 # Depdency pinning for incompatible messages
