@@ -41,7 +41,11 @@
       "versioning": "regex:^v(?<major>\\d+)(\\.(?<minor>\\d+)\\.(?<patch>\\d+))?$"
     },
     {
-      "matchPackageNames": ["coder/code-server", "boxboat/fixuid"],
+      "matchPackageNames": [
+        "coder/code-server",
+        "boxboat/fixuid",
+        "yannh/redis-dump-go"
+      ],
       "extractVersion": "^v(?<version>.*)$"
     }
   ],
