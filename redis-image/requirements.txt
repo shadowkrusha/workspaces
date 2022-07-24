@@ -1,2 +1,2 @@
 # Setup iredis
-iredis==1.11.1
+iredis==1.12.1
