@@ -7,7 +7,7 @@ great-expectations==0.15.9
 
 # Setup DBT
 # Pin cryptography version
-cffi==1.15.0
+cffi==1.15.1
 cryptography~=3.4
 
 dbt-core==1.1.0
