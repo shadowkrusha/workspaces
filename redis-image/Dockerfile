@@ -1,4 +1,4 @@
-FROM ghcr.io/shadowkrusha/base-workspace:1.0.6
+FROM ghcr.io/shadowkrusha/base-workspace:1.0.8
 
 ARG TARGETPLATFORM
 
