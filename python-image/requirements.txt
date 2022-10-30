@@ -2,7 +2,7 @@
 
 # Setup Great Expectations
 snowflake-sqlalchemy==1.4.1
-sqlalchemy==1.4.37
+sqlalchemy==1.4.42
 great-expectations==0.15.29
 
 # Setup DBT
