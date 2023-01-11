@@ -54,7 +54,7 @@ jobs:
     steps:
       # Get the repositery's code
       - name: Checkout
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3.2.0
 
       # https://github.com/docker/setup-qemu-action
       - name: Set up QEMU
