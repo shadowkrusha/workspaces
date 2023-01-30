@@ -47,6 +47,12 @@
         "yannh/redis-dump-go"
       ],
       "extractVersion": "^v(?<version>.*)$"
+    },
+    {
+      "matchPackageNames": [
+        "apache/maven"
+      ],
+      "extractVersion": "^maven-(?<version>.*)$"
     }
   ],
   "regexManagers": [
