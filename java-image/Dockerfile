@@ -8,7 +8,9 @@ ENV TZ=Australia/Perth
 RUN apt-get update && apt-get install -y \
     openjdk-17-jdk-headless
 
+# renovate: datasource=github-releases depName=apache/maven
 ENV MAVEN_VERSION=3.8.6
+
 RUN mkdir -p /usr/local/maven \
   && cd /usr/local/maven \
   && curl -fsSL https://dlcdn.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
