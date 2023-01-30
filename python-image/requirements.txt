@@ -3,7 +3,7 @@
 # Setup Great Expectations
 snowflake-sqlalchemy==1.4.4
 sqlalchemy==1.4.46
-great-expectations==0.15.29
+great-expectations==0.15.46
 
 # Setup DBT
 # Pin cryptography version
