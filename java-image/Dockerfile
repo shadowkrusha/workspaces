@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
     openjdk-17-jdk-headless
 
 # renovate: datasource=github-releases depName=apache/maven
-ENV MAVEN_VERSION=3.8.6
+ENV MAVEN_VERSION=3.8.7
 
 RUN mkdir -p /usr/local/maven \
   && cd /usr/local/maven \
