@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
 
 
 # renovate: datasource=github-releases depName=coder/code-server
-ENV CODE_SERVER_VERSION=4.9.1
+ENV CODE_SERVER_VERSION=4.10.1
 
 # renovate: datasource=github-releases depName=boxboat/fixuid
 ENV FIXUID_VERSION=0.5.1
