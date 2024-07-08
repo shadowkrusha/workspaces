@@ -15,5 +15,5 @@ dbt-snowflake==1.4.0
 
 # Depdency pinning for incompatible messages
 Jinja2==3.1.2
-jsonschema==3.2.0
+jsonschema==4.23.0
 typing-extensions==4.4.0
