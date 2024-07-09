@@ -1,7 +1,7 @@
 # Minimal requirements.txt to install DBT and Great Expectations
 
 # Setup Great Expectations
-snowflake-sqlalchemy==1.4.4
+snowflake-sqlalchemy==1.6.1
 sqlalchemy==1.4.46
 great-expectations==0.15.46
 
