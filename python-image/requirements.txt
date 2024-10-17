@@ -11,7 +11,7 @@ cffi==1.15.1
 cryptography~=3.4
 
 dbt-core==1.4.1
-dbt-snowflake==1.4.0
+dbt-snowflake==1.8.4
 
 # Depdency pinning for incompatible messages
 Jinja2==3.1.2
