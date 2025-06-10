@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
     python3-pip
 
 # renovate: datasource=github-releases depName=yannh/redis-dump-go
-ENV REDIS_DUMP_VERSION=0.8.0
+ENV REDIS_DUMP_VERSION=0.8.2
 
 RUN \
   case ${TARGETPLATFORM} in \
